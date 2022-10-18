@@ -7,7 +7,6 @@
 	    "eslint:recommended",
         "plugin:react/recommended",
         "standard-with-typescript",
-        "react-app",
         "prettier"
     ],
     "parserOptions": {
@@ -16,7 +15,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "curly": ["error", "all"],
