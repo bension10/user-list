@@ -33,16 +33,13 @@ type UserGeoLocation = {
 
 const getUsersList = async () => {
   try {
-    const response = await axios.get<GetUsersData>(
-      'https://jsonplaceholder.typicode.com/users', {
-        headers: {
-          Accept: 'application/json',
-        },
-      },
-    );
-    console.log('response ', response);
-  } catch {
+    const response = await axios.get<GetUsersData>('https://jsonplaceholder.typicode.com/users');
 
+    return response;
+  } catch (error) {
+    console.log(error);
+    
+    return error;
   }
 };
 
