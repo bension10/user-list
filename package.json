@@ -22,12 +22,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
     "format": "prettier . --write",
-    "test:staged": "cross-env CI=true npm run test --bail --findRelatedTests"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged --allow-empty"
-    }
+    "test:staged": "cross-env CI=true npm run test --bail --findRelatedTests",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "{src/**/*.tsx, src/**/*.ts}": [
@@ -64,9 +60,9 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "typescript": "*"
+    "typescript": "*",
+    "husky": "^8.0.0"
   }
 }
