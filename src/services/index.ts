@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-type GetUsersData = {
+interface UsersData {
   id: number;
   name: string;
   username: string;
@@ -9,10 +9,9 @@ type GetUsersData = {
   phone: string;
   website: string;
   company: UserCompanyDetails;
-
 }
 
-type UserAddress = {
+interface UserAddress {
   street: string;
   suite: string;
   city: string;
@@ -20,25 +19,25 @@ type UserAddress = {
   geo: UserGeoLocation;
 }
 
-type UserCompanyDetails = {
+interface UserCompanyDetails {
   name: string;
   catchPhrase: string;
   bs: string;
 }
 
-type UserGeoLocation = {
+interface UserGeoLocation {
   lat: string;
   lng: string;
 }
 
 const getUsersList = async () => {
   try {
-    const response = await axios.get<GetUsersData>('https://jsonplaceholder.typicode.com/users');
+    const response = await axios.get<UsersData>('https://jsonplaceholder.typicode.com/users');
 
     return response;
   } catch (error) {
     console.log(error);
-    
+
     return error;
   }
 };

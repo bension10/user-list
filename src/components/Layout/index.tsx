@@ -1,14 +1,17 @@
-import React from 'react';
-import { Layout as AntDLayout } from 'antd';
+import React from "react";
+import { Layout as AntDLayout } from "antd";
+const { Header, Footer, Content } = AntDLayout;
 
-type Props = {
-  children: React.ReactNode
-};
+interface Props {
+  children: React.ReactNode;
+}
 
 const Layout: React.FC<Props> = ({ children }) => {
-  return(
+  return (
     <AntDLayout>
-      {children}
+      <Header>Header</Header>
+      <Content>{children}</Content>
+      <Footer>Footer</Footer>
     </AntDLayout>
   );
 };
