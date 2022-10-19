@@ -19,7 +19,6 @@ const UserList: React.FC = () => {
     fetchUsers();
   });
 
-  console.log("user_data ", userData);
   return (
     <Layout>
       <StyledContainer>
