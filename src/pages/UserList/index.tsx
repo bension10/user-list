@@ -23,13 +23,15 @@ const UserList: React.FC = () => {
   return (
     <Layout>
       <StyledContainer>
-        <Row gutter={[36, 72]}>
-          {userData.map((user, key) => (
-            <Col key={key}>
-              <UserCard />
-            </Col>
-          ))}
-        </Row>
+        <div style={{ maxWidth: "1200px" }}>
+          <Row gutter={[48, 48]}>
+            {userData.map((user, key) => (
+              <Col key={key} span={6}>
+                <UserCard />
+              </Col>
+            ))}
+          </Row>
+        </div>
       </StyledContainer>
     </Layout>
   );
