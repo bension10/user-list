@@ -45,17 +45,6 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/explicit-function-return-type": "off"
-    // "prettier/prettier": [
-    //   "error",
-    //   {
-    //     "tabWidth": 2,
-    //     "printWidth": 100,
-    //     "singleQuote": true,
-    //     "trailingComma": "all",
-    //     "jsxSingleQuote": true,
-    //     "bracketSpacing": true
-    //   }
-    // ]
   },
   "overrides": [
     {

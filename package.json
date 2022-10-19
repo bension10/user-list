@@ -24,11 +24,6 @@
     "format": "prettier . --write",
     "test:staged": "cross-env CI=true npm run test --bail --findRelatedTests"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,ts,tsx,json,css}": [
       "npm run lint",
