@@ -1,55 +1,68 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-	    "eslint:recommended",
-        "plugin:react/recommended",
-        "standard-with-typescript",
-        "prettier"
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "prettier"
-    ],
-    "rules": {
-        "curly": ["error", "all"],
-        "no-console": "warn",
-        "no-nested-ternary": "off",
-        "prettier/prettier": ["warn"],
-        "quotes": ["error", "single"],
-        "import/no-named-as-default": "off",
-        "react/jsx-sort-default-props": "off",
-        "react/button-has-type": "warn",
-        "react/no-unused-prop-types": "warn",
-        "react/no-unused-state": "warn",
-        "react/prop-types": "warn",
-        "react/sort-prop-types": "off",
-        "react/static-property-placement": "off",
-        "react/display-name": "warn",
-        "react/jsx-handler-names": "off",
-        "react/no-access-state-in-setstate": "error",
-        "react/no-danger-with-children": "error",
-        "react/no-deprecated": "warn",
-        "react/no-find-dom-node": "error",
-        "react/no-redundant-should-component-update": "error",
-        "react/no-this-in-sfc": "error",
-        "react/no-typos": "error",
-        "react/no-unescaped-entities": "off",
-        "react/no-unsafe": "warn",
-        "react/prefer-es6-class": "error",
-        "react/void-dom-elements-no-children": "error",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/jsx-filename-extension": [
-            "error",
-            { "extensions": [".jsx", ".tsx"] }
-        ]
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "rules": {
+    "curly": ["error", "all"],
+    "no-console": "warn",
+    "no-nested-ternary": "off",
+    "import/no-named-as-default": "off",
+    "react/jsx-sort-default-props": "off",
+    "react/button-has-type": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/no-unused-state": "warn",
+    "react/prop-types": "warn",
+    "react/sort-prop-types": "off",
+    "react/static-property-placement": "off",
+    "react/display-name": "warn",
+    "react/jsx-handler-names": "off",
+    "react/no-access-state-in-setstate": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-deprecated": "warn",
+    "react/no-find-dom-node": "error",
+    "react/no-redundant-should-component-update": "error",
+    "react/no-this-in-sfc": "error",
+    "react/no-typos": "error",
+    "react/no-unescaped-entities": "off",
+    "react/no-unsafe": "warn",
+    "react/prefer-es6-class": "error",
+    "react/void-dom-elements-no-children": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "tabWidth": 2,
+    //     "printWidth": 100,
+    //     "singleQuote": true,
+    //     "trailingComma": "all",
+    //     "jsxSingleQuote": true,
+    //     "bracketSpacing": true
+    //   }
+    // ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
     }
+  ]
 }
