@@ -23,7 +23,6 @@
     "lint": "eslint --fix",
     "format": "prettier . --write",
     "test:staged": "cross-env CI=true npm run test --bail --findRelatedTests",
-    "prepare": "husky install",
     "lint-staged": "npm run lint \"src/**/*.{tsx,ts}\" npm run format \"src/**/*.{tsx,ts}\" npm run test:staged"
   },
   "husky": {
