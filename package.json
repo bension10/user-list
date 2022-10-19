@@ -30,7 +30,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "{src/**/*.tsx, src/**/*.ts}": [
       "npm run lint",
       "prettier --write",
       "npm run test:staged"
