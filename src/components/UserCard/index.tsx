@@ -1,9 +1,8 @@
 import React from "react";
-import { Avatar, Card } from "antd";
+import { Card } from "antd";
 import { HeartOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { UsersData } from "src/interface/user";
-
-const { Meta } = Card;
+import CardDetails from "src/components/CardDetails";
 interface Props {
   user: UsersData;
 }
@@ -22,11 +21,7 @@ const UserCard: React.FC<Props> = ({ user }) => {
         <DeleteOutlined key="delete" />,
       ]}
     >
-      <Meta
-        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-        title="Card title"
-        description="This is the description"
-      />
+      <CardDetails>
     </Card>
   );
 };
