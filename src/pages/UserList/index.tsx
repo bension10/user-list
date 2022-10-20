@@ -36,10 +36,10 @@ const UserList: React.FC = () => {
     <Layout>
       <Spin spinning={isLoading}>
         <StyledContainer>
-          <div style={{ maxWidth: "1200px" }}>
-            <Row gutter={[48, 48]}>
+          <div style={{ width: "1400px" }}>
+            <Row gutter={[12, 24]}>
               {users.map((user, key) => (
-                <Col key={key} span={6}>
+                <Col key={key} xs={16} sm={12} md={8} xl={6}>
                   <UserCard
                     id={user.id}
                     username={user.username}
@@ -47,6 +47,7 @@ const UserList: React.FC = () => {
                     email={user.email}
                     phone={user.phone}
                     website={user.website}
+                    width={300}
                   />
                 </Col>
               ))}

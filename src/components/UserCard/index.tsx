@@ -5,8 +5,12 @@ import { HeartOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { UsersData } from "src/interface/user";
 import CardDetails from "src/components/CardDetails";
 
-const UserCard: React.FC<UsersData> = (props) => {
-  const { id, username, name, email, phone, website } = props;
+interface Props extends UsersData {
+  width: number;
+}
+
+const UserCard: React.FC<Props> = (props) => {
+  const { id, username, name, email, phone, website, width } = props;
   const navigate = useNavigate();
 
   const navigateToUserDetail = (): void => {
@@ -16,7 +20,7 @@ const UserCard: React.FC<UsersData> = (props) => {
   return (
     <Card
       onClick={navigateToUserDetail}
-      style={{ width: 300 }}
+      style={{ width }}
       cover={
         <img alt="example" src={`https://avatars.dicebear.com/v2/avataaars/${username}.svg`} />
       }
