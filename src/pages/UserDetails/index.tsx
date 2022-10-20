@@ -14,9 +14,8 @@ const UserDetails: React.FC = (props) => {
   const [userData] = users.filter((user) => {
     return user.id.toString() === userId;
   });
-  console.log("userId ", userId);
-  console.log(userData);
   const { id, username, name, email, phone, website } = userData;
+
   return (
     <Layout>
       <StyledContainer>

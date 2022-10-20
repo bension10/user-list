@@ -53,7 +53,8 @@
   "jest": {
     "transformIgnorePatterns": [
       "/!node_modules\\/axios/"
-    ]
+    ],
+    "resetMocks": false
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^1.8.6",
