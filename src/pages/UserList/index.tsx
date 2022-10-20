@@ -40,7 +40,14 @@ const UserList: React.FC = () => {
             <Row gutter={[48, 48]}>
               {users.map((user, key) => (
                 <Col key={key} span={6}>
-                  <UserCard user={user} />
+                  <UserCard
+                    id={user.id}
+                    username={user.username}
+                    name={user.name}
+                    email={user.email}
+                    phone={user.phone}
+                    website={user.website}
+                  />
                 </Col>
               ))}
             </Row>

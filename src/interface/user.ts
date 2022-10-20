@@ -3,10 +3,10 @@ export interface UsersData {
   name: string;
   username: string;
   email: string;
-  address: UserAddress;
+  address?: UserAddress;
   phone: string;
   website: string;
-  company: UserCompanyDetails;
+  company?: UserCompanyDetails;
 }
 
 export interface UserAddress {

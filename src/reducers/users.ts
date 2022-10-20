@@ -5,7 +5,17 @@ import { createSlice } from '@reduxjs/toolkit';
 export const usersSlice = createSlice({
   name: 'users',
   initialState: {
-    users: [],
+    users: [
+      {
+        id: 1,
+        name: '',
+        username: '',
+        email: '',
+        address: {},
+        phone: '',
+        website: '',
+        company: {},}
+    ],
   },
   reducers: {
     fetchPending: (state) => {
