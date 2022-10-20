@@ -22,6 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "removeComments": true
   },
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "build",
@@ -30,5 +31,10 @@
     "webpack",
     "jest",
     "src/setupTests.ts"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }

@@ -51,9 +51,9 @@
     ]
   },
   "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)?$": "ts-jest"
-    }
+    "transformIgnorePatterns": [
+      "/!node_modules\\/axios/"
+    ]
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^1.8.6",

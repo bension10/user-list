@@ -10,7 +10,7 @@ import getUsersList from "src/services/";
 import StyledContainer from "./UserList.style";
 
 const UserList: React.FC = () => {
-  const { users } = useAppSelector((state) => state.users);
+  const users = useAppSelector((state) => state.users);
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 

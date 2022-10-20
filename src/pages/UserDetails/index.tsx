@@ -9,7 +9,7 @@ import StyledContainer from "./UserDetails.style";
 const UserDetails: React.FC = (props) => {
   const params = useParams();
   const { userId } = params;
-  const { users } = useAppSelector((state) => state.users);
+  const users = useAppSelector((state) => state.users);
 
   const [userData] = users.filter((user) => {
     return user.id.toString() === userId;
