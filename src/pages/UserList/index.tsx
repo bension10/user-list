@@ -1,40 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Col, Row } from "antd";
+import { Col, Row, Spin } from "antd";
 import Layout from "src/components/Layout";
 import UserCard from "src/components/UserCard";
-import StyledContainer from "./UserList.style";
+
+import { useAppSelector, useAppDispatch } from "src/hooks/redux-hooks";
+import { fetchPending, fetchSuccess, fetchFail } from "src/reducers/users";
 import getUsersList from "src/services/";
 
+import StyledContainer from "./UserList.style";
+
 const UserList: React.FC = () => {
-  const users = useSelector((state: { users: [] }) => state.users);
-  const [userData, setData] = useState([]);
+  const { users } = useAppSelector((state) => state.users);
+  const dispatch = useAppDispatch();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    setIsLoading(true);
+
     const fetchUsers = async (): Promise<void> => {
+      dispatch(fetchPending());
       const response = await getUsersList();
       if (response.status === 200) {
-        setData(response.data);
+        setIsLoading(false);
+        dispatch(fetchSuccess(response.data));
+      } else {
+        setIsLoading(false);
+        dispatch(fetchFail());
       }
     };
 
     fetchUsers();
-  }, []);
-  console.log("users", users);
+  }, [dispatch]);
 
   return (
     <Layout>
-      <StyledContainer>
-        <div style={{ maxWidth: "1200px" }}>
-          <Row gutter={[48, 48]}>
-            {userData.map((user, key) => (
-              <Col key={key} span={6}>
-                <UserCard />
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </StyledContainer>
+      <Spin spinning={isLoading}>
+        <StyledContainer>
+          <div style={{ maxWidth: "1200px" }}>
+            <Row gutter={[48, 48]}>
+              {users.map((user, key) => (
+                <Col key={key} span={6}>
+                  <UserCard user={user} />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </StyledContainer>
+      </Spin>
     </Layout>
   );
 };
