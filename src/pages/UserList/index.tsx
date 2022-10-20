@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Col, Row } from "antd";
 import Layout from "src/components/Layout";
 import UserCard from "src/components/UserCard";
@@ -6,6 +7,7 @@ import StyledContainer from "./UserList.style";
 import getUsersList from "src/services/";
 
 const UserList: React.FC = () => {
+  const users = useSelector((state: { users: [] }) => state.users);
   const [userData, setData] = useState([]);
 
   useEffect(() => {
@@ -17,7 +19,8 @@ const UserList: React.FC = () => {
     };
 
     fetchUsers();
-  });
+  }, []);
+  console.log("users", users);
 
   return (
     <Layout>
